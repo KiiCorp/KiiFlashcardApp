@@ -1,3 +1,42 @@
 .mobile-container {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 25%;
+  right: 25%;
   border: 2px solid;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.button-bar {
+  bottom: 0;
+}
+
+.splash {
+  text-align: center;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-primary {
+  background-color: #3facef;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+}
+.btn-primary:hover {
+  background-color: #3facef;
+}
+
+.btn-secondary {
+  background-color: #66ccff;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
 }
