@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en-GB'>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flash Me</title>
+  <link rel="stylesheet" href="css/bootstrap-flatly.css" />
+</head>
+
+<body>
+  <div id='container'></div>
+
+  <script id='template' type='text/ractive'>
+    <p>Hello, {{name}}!</p>
+  </script>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/ractive.js"></script>
+<script type="text/javascript" src="js/KiiSDKv2.1.11.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+</body>
+</html>
