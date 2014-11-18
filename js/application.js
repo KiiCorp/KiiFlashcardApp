@@ -1,5 +1,5 @@
 var ractive = new Ractive({
-  el: 'container',
+  el: 'dynamic',
   template: '#template',
   data: { name: 'world' }
 });

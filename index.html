@@ -5,26 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flash Me</title>
   <link rel="stylesheet" href="css/bootstrap-flatly.css" />
+  <link rel="stylesheet" href="css/application.css"/>
 </head>
 
 <body>
-  <div id='container'></div>
 
   <script id='template' type='text/ractive'>
     <p>Hello, {{name}}!</p>
   </script>
 
-<div class="row">
-  <div class="col-md-12">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-      </ul>
+<div class="mobile-container">
+  <div id='dynamic'></div>
+  <div class="row">
+    <div class="col-sm-12 splash">
+      <img src="img/splash.png" alt="Flash Me"/>
+    </div>
+  </div>
+  <div class="row button-bar">
+    <div class="col-sm-6">
+      <a href="#" class="btn btn-primary full-width">Create Account</a>
+    </div>
+    <div class="col-sm-6">
+      <a href="#" class="btn btn-primary full-width">Sign In</a>
     </div>
   </div>
 </div>
