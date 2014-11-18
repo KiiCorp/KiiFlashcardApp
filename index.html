@@ -24,7 +24,9 @@
 </div>
 <div class="row button-bar">
   <div class="col-sm-6">
-    <a href="#" class="btn btn-secondary full-width">Create Account</a>
+    {{#link-to 'signup'}}
+     <div class="btn btn-secondary full-width">Create Account</div>
+    {{/link-to}}
   </div>
   <div class="col-sm-6">
     <a href="#" class="btn btn-primary full-width">Sign In</a>
@@ -35,12 +37,12 @@
 <script type="text/x-handlebars" id="signup">
 <div class="row">
   <div class="col-sm-12 splash">
-    <img src="img/splash.png" alt="Flash Me"/>
+    <img src="img/logo.png" alt="Flash Me"/>
   </div>
 </div>
 <div class="row button-bar">
   <div class="col-sm-12">
-    <a href="#" class="btn btn-secondary full-width">Create Account</a>
+    <div class="btn btn-secondary full-width">Create Account</div>
   </div>
 </div>
 </script>
