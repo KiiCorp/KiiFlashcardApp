@@ -12,18 +12,35 @@
 
 <script type="text/x-handlebars">
 <div class="mobile-container">
-  <div class="row">
-    <div class="col-sm-12 splash">
-      <img src="img/splash.png" alt="Flash Me"/>
-    </div>
+  {{outlet}}
+</div>
+</script>
+
+<script type="text/x-handlebars" id="index">
+<div class="row">
+  <div class="col-sm-12 splash">
+    <img src="img/splash.png" alt="Flash Me"/>
   </div>
-  <div class="row button-bar">
-    <div class="col-sm-6">
-      <a href="#" class="btn btn-secondary full-width">Create Account</a>
-    </div>
-    <div class="col-sm-6">
-      <a href="#" class="btn btn-primary full-width">Sign In</a>
-    </div>
+</div>
+<div class="row button-bar">
+  <div class="col-sm-6">
+    <a href="#" class="btn btn-secondary full-width">Create Account</a>
+  </div>
+  <div class="col-sm-6">
+    <a href="#" class="btn btn-primary full-width">Sign In</a>
+  </div>
+</div>
+</script>
+
+<script type="text/x-handlebars" id="signup">
+<div class="row">
+  <div class="col-sm-12 splash">
+    <img src="img/splash.png" alt="Flash Me"/>
+  </div>
+</div>
+<div class="row button-bar">
+  <div class="col-sm-12">
+    <a href="#" class="btn btn-secondary full-width">Create Account</a>
   </div>
 </div>
 </script>

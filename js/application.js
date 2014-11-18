@@ -1,9 +1,9 @@
 App = Ember.Application.create();
 
-// App.Router.map(function() {
-//   this.route("signup", { path: "/signup" });
-//   this.route("signin", { path: "/signin" });
-// });
+App.Router.map(function() {
+  this.route("signup", {path: "/signup" });
+  //this.route("signin", {path: "/signin" });
+});
 
 // App.IndexRoute = Ember.Route.extend({
 
