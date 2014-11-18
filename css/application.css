@@ -5,6 +5,8 @@
   left: 25%;
   right: 25%;
   border: 2px solid;
+  /* status bar */
+  padding-top: 25px;
 }
 
 .full-width {
@@ -39,4 +41,17 @@
   color: #ffffff;
   text-transform: uppercase;
   border: none;
+}
+
+.nav-bar {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.nav-bar-back {
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
 }
