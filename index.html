@@ -171,6 +171,19 @@
       {{/link-to}}
     </div>
   </div>
+  {{else}}
+  <div class="row">
+    <div class="col-sm-12 text-center padded">
+      <p class="text-warning">You have words to study.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      {{#link-to 'study'}}
+       <div class="btn btn-primary full-width">Study Words</div>
+      {{/link-to}}
+    </div>
+  </div>
   {{/if}}
 </div>
 </script>
