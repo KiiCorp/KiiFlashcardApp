@@ -71,12 +71,31 @@ App.HomeRoute = Ember.Route.extend({
   model: function() {
     return new Ember.RSVP.Promise(function (resolve, reject) {
       var user = KiiUser.getCurrentUser();
-      var bucket = user.bucketWithName("words");
-      var home = App.Home.create({
-        user: KiiUser.getCurrentUser(),
-        noMoreWords: true
-      });
-      resolve(home);
+      if (user === null) {
+        resolve(App.Home.create({
+          user: null
+        }));
+      } else {
+        var bucket = user.bucketWithName("words");
+        bucket.count({
+          success: function(bucket, query, count) {
+            var home = App.Home.create({
+              user: user,
+              noMoreWords: count == 0
+            });
+            resolve(home);
+          },
+          failure: function(bucket, query, errorString) {
+            console.log(4);
+            console.log("Getting bucket failed: " + errorString);
+            var home = App.Home.create({
+              user: user,
+              noMoreWords: true
+            });
+            reject(home);
+          }
+        });
+      }
     });
   },
   afterModel: function(home, transition) {
