@@ -63,7 +63,7 @@ App.IndexRoute = Ember.Route.extend({
     return user;
   },
   afterModel: function(user, transition) {
-    if (user !== undefined) {
+    if (user !== null) {
       this.transitionTo('home');
     }
   }
@@ -75,7 +75,7 @@ App.HomeRoute = Ember.Route.extend({
     return user;
   },
   afterModel: function(user, transition) {
-    if (user === undefined) {
+    if (user == null) {
       this.transitionTo('index');
     }
   }
