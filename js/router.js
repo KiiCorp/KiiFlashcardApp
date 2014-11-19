@@ -27,3 +27,14 @@ App.SignupRoute = Ember.Route.extend({
     }
   }
 });
+
+
+App.SigninRoute = Ember.Route.extend({
+  model: function() {
+    var signup = App.Signin.create({
+      email: null,
+      password: null
+    });
+    return signup;
+  },
+});
