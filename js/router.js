@@ -14,7 +14,6 @@ App.SignupRoute = Ember.Route.extend({
         var user = KiiUser.userWithUsername(this.context.email, this.context.password);
         user.register({
           success: function(theAuthedUser) {
-            window.sessionStorage.setItem('user', theAuthedUser);
             that.transitionTo('home');
           },
           failure: function(theUser, anErrorString) {
@@ -43,7 +42,6 @@ App.SigninRoute = Ember.Route.extend({
         that = this
         KiiUser.authenticate(this.context.email, this.context.password, {
           success: function(theAuthedUser) {
-            window.sessionStorage.setItem('user', theAuthedUser);
             that.transitionTo('home');
           },
           failure: function(theUser, anErrorString) {
@@ -59,7 +57,7 @@ App.SigninRoute = Ember.Route.extend({
 
 App.IndexRoute = Ember.Route.extend({
   model: function() {
-    var user = window.sessionStorage.getItem('user')
+    var user = KiiUser.getCurrentUser()
     return user;
   },
   afterModel: function(user, transition) {
@@ -71,10 +69,15 @@ App.IndexRoute = Ember.Route.extend({
 
 App.HomeRoute = Ember.Route.extend({
   model: function() {
-    var home = App.Home.create({
-      user: window.sessionStorage.getItem('user')
+    return new Ember.RSVP.Promise(function (resolve, reject) {
+      var user = KiiUser.getCurrentUser();
+      var bucket = user.bucketWithName("words");
+      var home = App.Home.create({
+        user: KiiUser.getCurrentUser(),
+        noMoreWords: true
+      });
+      resolve(home);
     });
-    return home;
   },
   afterModel: function(home, transition) {
     if (home.user == null) {
