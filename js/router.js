@@ -14,7 +14,7 @@ App.SignupRoute = Ember.Route.extend({
         var user = KiiUser.userWithUsername(this.context.email, this.context.password);
         user.register({
           success: function(theAuthedUser) {
-            console.log("success")
+            window.sessionStorage.setItem('user', theAuthedUser);
             that.transitionTo('home');
           },
           failure: function(theUser, anErrorString) {
@@ -43,7 +43,7 @@ App.SigninRoute = Ember.Route.extend({
         that = this
         KiiUser.authenticate(this.context.email, this.context.password, {
           success: function(theAuthedUser) {
-            console.log("success")
+            window.sessionStorage.setItem('user', theAuthedUser);
             that.transitionTo('home');
           },
           failure: function(theUser, anErrorString) {
@@ -53,6 +53,30 @@ App.SigninRoute = Ember.Route.extend({
       } catch (e) {
         console.log(e);
       }
+    }
+  }
+});
+
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    var user = window.sessionStorage.getItem('user')
+    return user;
+  },
+  afterModel: function(user, transition) {
+    if (user !== undefined) {
+      this.transitionTo('home');
+    }
+  }
+});
+
+App.HomeRoute = Ember.Route.extend({
+  model: function() {
+    var user = window.sessionStorage.getItem('user')
+    return user;
+  },
+  afterModel: function(user, transition) {
+    if (user === undefined) {
+      this.transitionTo('index');
     }
   }
 });
