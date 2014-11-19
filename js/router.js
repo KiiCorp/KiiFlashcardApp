@@ -71,11 +71,13 @@ App.IndexRoute = Ember.Route.extend({
 
 App.HomeRoute = Ember.Route.extend({
   model: function() {
-    var user = window.sessionStorage.getItem('user')
-    return user;
+    var home = App.Home.create({
+      user: window.sessionStorage.getItem('user')
+    });
+    return home;
   },
-  afterModel: function(user, transition) {
-    if (user == null) {
+  afterModel: function(home, transition) {
+    if (home.user == null) {
       this.transitionTo('index');
     }
   }
