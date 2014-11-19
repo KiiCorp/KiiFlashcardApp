@@ -9,8 +9,6 @@ App.SignupRoute = Ember.Route.extend({
   },
   actions: {
     createAccount: function() {
-      console.log("Creating account...");
-      console.log(this.context);
       try {
         var user = KiiUser.userWithUsername(this.context.email, this.context.password);
         user.register({
@@ -37,4 +35,20 @@ App.SigninRoute = Ember.Route.extend({
     });
     return signup;
   },
+  actions: {
+    signin: function() {
+      try {
+        KiiUser.authenticate(this.context.email, this.context.password, {
+          success: function(theAuthedUser) {
+            console.log("success")
+          },
+          failure: function(theUser, anErrorString) {
+            console.log("error")
+          },
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
 });
