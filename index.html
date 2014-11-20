@@ -18,7 +18,7 @@
 </script>
 
 <script type="text/x-handlebars" id="index">
-<div class="row">
+<div class="row status-bar">
   <div class="col-sm-12 splash">
     <img src="img/splash.png" alt="Flash Me"/>
   </div>
@@ -38,7 +38,7 @@
 </script>
 
 <script type="text/x-handlebars" id="signup">
-<div class="row">
+<div class="row status-bar">
   <div class="col-sm-1 nav-bar-back">
     {{#link-to 'index'}}
       <i class="fa fa-angle-left"></i>
@@ -98,7 +98,7 @@
 </script>
 
 <script type="text/x-handlebars" id="signin">
-<div class="row">
+<div class="row status-bar">
   <div class="col-sm-1 nav-bar-back">
     {{#link-to 'index'}}
       <i class="fa fa-angle-left"></i>
@@ -149,7 +149,7 @@
 </script>
 
 <script type="text/x-handlebars" id="home">
-<div class="row">
+<div class="row status-bar blue-background">
   <div class="col-sm-1 nav-bar-back">
     {{#link-to 'index'}}
       <i class="fa fa-angle-left"></i>
@@ -159,9 +159,9 @@
     HOME
   </div>
   {{#if noMoreWords}}
-  <div class="row">
-    <div class="col-sm-12 text-center padded">
-      <p class="text-warning">You have no more words to study.</p>
+  <div class="row full-area-height">
+    <div class="col-sm-12 text-center padded full-area-height">
+      <p class="full-area-message full-area-height">You have no more words to study.</p>
     </div>
   </div>
   <div class="row">
@@ -172,9 +172,9 @@
     </div>
   </div>
   {{else}}
-  <div class="row">
-    <div class="col-sm-12 text-center padded">
-      <p class="text-warning">You have words to study.</p>
+  <div class="row full-area-height">
+    <div class="col-sm-12 text-center padded full-area-height">
+      <p class="full-area-message full-area-height">You have words to study.</p>
     </div>
   </div>
   <div class="row">

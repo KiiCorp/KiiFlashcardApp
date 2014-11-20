@@ -5,9 +5,11 @@
   left: 25%;
   right: 25%;
   border: 2px solid;
-  /* status bar */
-  padding-top: 25px;
   overflow-x: hidden;
+}
+
+.status-bar {
+  padding-top: 25px;
 }
 
 .full-width {
@@ -86,3 +88,32 @@
 .padded {
   padding: 0px 45px;
 }
+
+.full-area-message {
+  color: #ffffff;
+  font-size: 32px;
+  margin-top: 30%;
+}
+
+.full-area-height {
+  /* height minus button bar */
+  height: calc(100% - 42px);
+}
+
+.blue-background {
+  background-color: #3facef;
+  height: 100%
+}
+
+.blue-background .nav-bar,
+.blue-background .nav-bar-back a {
+  color: #ffffff;
+}
+.blue-background .btn-primary {
+  background-color: #ffffff;
+  color: #3facef;
+}
+.blue-background .btn-primary:hover {
+  background-color: #ffffff;
+}
+
