@@ -15,6 +15,10 @@
     "kii-analytics-sdk": "~2.1.5",
     "kii-cloud-sdk": "~2.1.23",
     "jquery": "~2.1.1",
+    "ember": "~1.6",
+    "ember-data": "~1.0.0-beta.8",
+    "bootstrap": "~3.3.1"
+    "jquery": "~2.1.1",
     "ember": "~1.8.1",
     "ember-data": "~1.0.0",
     "handlebars": "~1.3.0"
