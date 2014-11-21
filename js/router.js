@@ -14,6 +14,8 @@ App.SignupRoute = Ember.Route.extend({
         var user = KiiUser.userWithUsername(this.context.email, this.context.password);
         user.register({
           success: function(theAuthedUser) {
+            var accessToken = KiiUser.getCurrentUser().getAccessToken();
+            window.sessionStorage.setItem("accessToken", accessToken)
             that.transitionTo('home');
           },
           failure: function(theUser, anErrorString) {
@@ -42,6 +44,8 @@ App.SigninRoute = Ember.Route.extend({
         that = this
         KiiUser.authenticate(this.context.email, this.context.password, {
           success: function(theAuthedUser) {
+            var accessToken = KiiUser.getCurrentUser().getAccessToken();
+            window.sessionStorage.setItem("accessToken", accessToken)
             that.transitionTo('home');
           },
           failure: function(theUser, anErrorString) {
@@ -57,8 +61,18 @@ App.SigninRoute = Ember.Route.extend({
 
 App.IndexRoute = Ember.Route.extend({
   model: function() {
-    var user = KiiUser.getCurrentUser()
-    return user;
+    return new Ember.RSVP.Promise(function (resolve, reject) {
+      var accessToken = window.sessionStorage.getItem("accessToken")
+      KiiUser.authenticateWithToken(accessToken, {
+        success: function(theUser) {
+          resolve(theUser);
+        },
+        failure: function(theUser, errorString) {
+          console.log("Error authenticating: " + errorString);
+          reject(theUser);
+        }
+      });
+    });
   },
   afterModel: function(user, transition) {
     if (user !== null) {
