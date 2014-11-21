@@ -69,7 +69,7 @@ App.IndexRoute = Ember.Route.extend({
         },
         failure: function(theUser, errorString) {
           console.log("Error authenticating: " + errorString);
-          reject(theUser);
+          resolve(null);
         }
       });
     });
